@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['as' => 'get_accounts', 'uses' => 'Controller@getAccounts']);
+
+Route::post('/save', ['as' => 'set_accounts', 'uses' => 'Controller@setAccounts']);
